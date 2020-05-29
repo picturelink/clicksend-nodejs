@@ -25,12 +25,19 @@ You will need to install typescript to compile the code.
 sudo npm install typescript
 ```
 
+### Install dependencies
+
+Install the required dependencies for building.
+
+```shell
+npm install
+```
+
 ### Compile the TypeScript into JavaScript
 
 Run the following commands to compile typescript into javascript:
 
 ```shell
-sudo npm add request http bluebird @types/node
 tsc --target es5 /node_modules/clicksend/api.ts
 ```
 

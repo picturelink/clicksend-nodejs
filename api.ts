@@ -12,7 +12,6 @@
 
 import localVarRequest = require('request');
 import http = require('http');
-import Promise = require('bluebird');
 
 let defaultBasePath = 'https://rest.clicksend.com/v3';
 
@@ -2943,7 +2942,7 @@ export class AccountApi {
      * @summary Get account information
      * @param {*} [options] Override http request options.
      */
-    public accountGet (options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public accountGet (options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/account';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -2973,7 +2972,7 @@ export class AccountApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -2994,7 +2993,7 @@ export class AccountApi {
      * @param account Account model
      * @param {*} [options] Override http request options.
      */
-    public accountPost (account: Account, options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public accountPost (account: Account, options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/account';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -3030,7 +3029,7 @@ export class AccountApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -3052,7 +3051,7 @@ export class AccountApi {
      * @param month Month to filter by (mm)
      * @param {*} [options] Override http request options.
      */
-    public accountUseageBySubaccountGet (year: number, month: number, options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public accountUseageBySubaccountGet (year: number, month: number, options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/account/usage/{year}/{month}/subaccount'
             .replace('{' + 'year' + '}', encodeURIComponent(String(year)))
             .replace('{' + 'month' + '}', encodeURIComponent(String(month)));
@@ -3094,7 +3093,7 @@ export class AccountApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -3115,7 +3114,7 @@ export class AccountApi {
      * @param accountVerify Account details
      * @param {*} [options] Override http request options.
      */
-    public accountVerifySendPut (accountVerify: AccountVerify, options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public accountVerifySendPut (accountVerify: AccountVerify, options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/account-verify/send';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -3151,7 +3150,7 @@ export class AccountApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -3172,7 +3171,7 @@ export class AccountApi {
      * @param activationToken 
      * @param {*} [options] Override http request options.
      */
-    public accountVerifyVerifyByActivationTokenPut (activationToken: number, options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public accountVerifyVerifyByActivationTokenPut (activationToken: number, options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/account-verify/verify/{activation_token}'
             .replace('{' + 'activation_token' + '}', encodeURIComponent(String(activationToken)));
         let localVarQueryParameters: any = {};
@@ -3208,7 +3207,7 @@ export class AccountApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -3229,7 +3228,7 @@ export class AccountApi {
      * @param forgotPassword 
      * @param {*} [options] Override http request options.
      */
-    public forgotPasswordPut (forgotPassword?: ForgotPassword, options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public forgotPasswordPut (forgotPassword?: ForgotPassword, options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/forgot-password';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -3260,7 +3259,7 @@ export class AccountApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -3281,7 +3280,7 @@ export class AccountApi {
      * @param verifyPassword verifyPassword data
      * @param {*} [options] Override http request options.
      */
-    public forgotPasswordVerifyPut (verifyPassword: AccountForgotPasswordVerify, options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public forgotPasswordVerifyPut (verifyPassword: AccountForgotPasswordVerify, options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/forgot-password/verify';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -3317,7 +3316,7 @@ export class AccountApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -3338,7 +3337,7 @@ export class AccountApi {
      * @param forgotUsername 
      * @param {*} [options] Override http request options.
      */
-    public forgotUsernamePut (forgotUsername?: ForgotUsername, options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public forgotUsernamePut (forgotUsername?: ForgotUsername, options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/forgot-username';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -3367,7 +3366,7 @@ export class AccountApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -3443,7 +3442,7 @@ export class AccountRechargeApi {
      * @summary Get Credit Card info
      * @param {*} [options] Override http request options.
      */
-    public rechargeCreditCardGet (options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public rechargeCreditCardGet (options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/recharge/credit-card';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -3473,7 +3472,7 @@ export class AccountRechargeApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -3494,7 +3493,7 @@ export class AccountRechargeApi {
      * @param creditCard CreditCard model
      * @param {*} [options] Override http request options.
      */
-    public rechargeCreditCardPut (creditCard: CreditCard, options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public rechargeCreditCardPut (creditCard: CreditCard, options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/recharge/credit-card';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -3530,7 +3529,7 @@ export class AccountRechargeApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -3551,7 +3550,7 @@ export class AccountRechargeApi {
      * @param country Country code
      * @param {*} [options] Override http request options.
      */
-    public rechargePackagesGet (country?: string, options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public rechargePackagesGet (country?: string, options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/recharge/packages';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -3585,7 +3584,7 @@ export class AccountRechargeApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -3606,7 +3605,7 @@ export class AccountRechargeApi {
      * @param packageId ID of package to purchase
      * @param {*} [options] Override http request options.
      */
-    public rechargePurchaseByPackageIdPut (packageId: number, options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public rechargePurchaseByPackageIdPut (packageId: number, options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/recharge/purchase/{package_id}'
             .replace('{' + 'package_id' + '}', encodeURIComponent(String(packageId)));
         let localVarQueryParameters: any = {};
@@ -3642,7 +3641,7 @@ export class AccountRechargeApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -3663,7 +3662,7 @@ export class AccountRechargeApi {
      * @param transactionId ID of transaction to retrieve
      * @param {*} [options] Override http request options.
      */
-    public rechargeTransactionsByTransactionIdGet (transactionId: string, options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public rechargeTransactionsByTransactionIdGet (transactionId: string, options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/recharge/transactions/{transaction_id}'
             .replace('{' + 'transaction_id' + '}', encodeURIComponent(String(transactionId)));
         let localVarQueryParameters: any = {};
@@ -3699,7 +3698,7 @@ export class AccountRechargeApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -3721,7 +3720,7 @@ export class AccountRechargeApi {
      * @param limit Number of records per page
      * @param {*} [options] Override http request options.
      */
-    public rechargeTransactionsGet (page?: number, limit?: number, options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public rechargeTransactionsGet (page?: number, limit?: number, options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/recharge/transactions';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -3759,7 +3758,7 @@ export class AccountRechargeApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -3837,7 +3836,7 @@ export class ContactApi {
      * @param contactId Contact ID
      * @param {*} [options] Override http request options.
      */
-    public listsContactsByListIdAndContactIdDelete (listId: number, contactId: number, options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public listsContactsByListIdAndContactIdDelete (listId: number, contactId: number, options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/lists/{list_id}/contacts/{contact_id}'
             .replace('{' + 'list_id' + '}', encodeURIComponent(String(listId)))
             .replace('{' + 'contact_id' + '}', encodeURIComponent(String(contactId)));
@@ -3879,7 +3878,7 @@ export class ContactApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -3901,7 +3900,7 @@ export class ContactApi {
      * @param contactId Your contact id you want to access.
      * @param {*} [options] Override http request options.
      */
-    public listsContactsByListIdAndContactIdGet (listId: number, contactId: number, options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public listsContactsByListIdAndContactIdGet (listId: number, contactId: number, options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/lists/{list_id}/contacts/{contact_id}'
             .replace('{' + 'list_id' + '}', encodeURIComponent(String(listId)))
             .replace('{' + 'contact_id' + '}', encodeURIComponent(String(contactId)));
@@ -3943,7 +3942,7 @@ export class ContactApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -3966,7 +3965,7 @@ export class ContactApi {
      * @param contact Contact model
      * @param {*} [options] Override http request options.
      */
-    public listsContactsByListIdAndContactIdPut (listId: number, contactId: number, contact: Contact, options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public listsContactsByListIdAndContactIdPut (listId: number, contactId: number, contact: Contact, options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/lists/{list_id}/contacts/{contact_id}'
             .replace('{' + 'list_id' + '}', encodeURIComponent(String(listId)))
             .replace('{' + 'contact_id' + '}', encodeURIComponent(String(contactId)));
@@ -4014,7 +4013,7 @@ export class ContactApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -4037,7 +4036,7 @@ export class ContactApi {
      * @param limit Number of records per page
      * @param {*} [options] Override http request options.
      */
-    public listsContactsByListIdGet (listId: number, page?: number, limit?: number, options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public listsContactsByListIdGet (listId: number, page?: number, limit?: number, options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/lists/{list_id}/contacts'
             .replace('{' + 'list_id' + '}', encodeURIComponent(String(listId)));
         let localVarQueryParameters: any = {};
@@ -4081,7 +4080,7 @@ export class ContactApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -4103,7 +4102,7 @@ export class ContactApi {
      * @param listId List id
      * @param {*} [options] Override http request options.
      */
-    public listsContactsByListIdPost (contact: Contact, listId: number, options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public listsContactsByListIdPost (contact: Contact, listId: number, options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/lists/{list_id}/contacts'
             .replace('{' + 'list_id' + '}', encodeURIComponent(String(listId)));
         let localVarQueryParameters: any = {};
@@ -4145,7 +4144,7 @@ export class ContactApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -4167,7 +4166,7 @@ export class ContactApi {
      * @param optOutListId Your opt out list id
      * @param {*} [options] Override http request options.
      */
-    public listsRemoveOptedOutContactsByListIdAndOptOutListIdPut (listId: number, optOutListId: number, options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public listsRemoveOptedOutContactsByListIdAndOptOutListIdPut (listId: number, optOutListId: number, options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/lists/{list_id}/remove-opted-out-contacts/{opt_out_list_id}'
             .replace('{' + 'list_id' + '}', encodeURIComponent(String(listId)))
             .replace('{' + 'opt_out_list_id' + '}', encodeURIComponent(String(optOutListId)));
@@ -4209,7 +4208,7 @@ export class ContactApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -4232,7 +4231,7 @@ export class ContactApi {
      * @param toListId List ID for list you want to transfer contact to.
      * @param {*} [options] Override http request options.
      */
-    public listsTransferContactPut (fromListId: number, contactId: number, toListId: number, options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public listsTransferContactPut (fromListId: number, contactId: number, toListId: number, options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/lists/{from_list_id}/contacts/{contact_id}/transfer/{to_list_id}'
             .replace('{' + 'from_list_id' + '}', encodeURIComponent(String(fromListId)))
             .replace('{' + 'contact_id' + '}', encodeURIComponent(String(contactId)))
@@ -4280,7 +4279,7 @@ export class ContactApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -4357,7 +4356,7 @@ export class ContactListApi {
      * @param listId List ID
      * @param {*} [options] Override http request options.
      */
-    public listsByListIdDelete (listId: number, options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public listsByListIdDelete (listId: number, options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/lists/{list_id}'
             .replace('{' + 'list_id' + '}', encodeURIComponent(String(listId)));
         let localVarQueryParameters: any = {};
@@ -4393,7 +4392,7 @@ export class ContactListApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -4414,7 +4413,7 @@ export class ContactListApi {
      * @param listId List ID
      * @param {*} [options] Override http request options.
      */
-    public listsByListIdGet (listId: number, options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public listsByListIdGet (listId: number, options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/lists/{list_id}'
             .replace('{' + 'list_id' + '}', encodeURIComponent(String(listId)));
         let localVarQueryParameters: any = {};
@@ -4450,7 +4449,7 @@ export class ContactListApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -4472,7 +4471,7 @@ export class ContactListApi {
      * @param contactList Contact list model
      * @param {*} [options] Override http request options.
      */
-    public listsByListIdPut (listId: number, contactList: ContactList, options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public listsByListIdPut (listId: number, contactList: ContactList, options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/lists/{list_id}'
             .replace('{' + 'list_id' + '}', encodeURIComponent(String(listId)));
         let localVarQueryParameters: any = {};
@@ -4514,7 +4513,7 @@ export class ContactListApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -4536,7 +4535,7 @@ export class ContactListApi {
      * @param limit Number of records per page
      * @param {*} [options] Override http request options.
      */
-    public listsGet (page?: number, limit?: number, options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public listsGet (page?: number, limit?: number, options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/lists';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -4574,7 +4573,7 @@ export class ContactListApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -4596,7 +4595,7 @@ export class ContactListApi {
      * @param file ContactListImport model
      * @param {*} [options] Override http request options.
      */
-    public listsImportByListIdPost (listId: number, file: ContactListImport, options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public listsImportByListIdPost (listId: number, file: ContactListImport, options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/lists/{list_id}/import'
             .replace('{' + 'list_id' + '}', encodeURIComponent(String(listId)));
         let localVarQueryParameters: any = {};
@@ -4638,7 +4637,7 @@ export class ContactListApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -4659,7 +4658,7 @@ export class ContactListApi {
      * @param contactList Contact list model
      * @param {*} [options] Override http request options.
      */
-    public listsPost (contactList: ContactList, options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public listsPost (contactList: ContactList, options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/lists';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -4695,7 +4694,7 @@ export class ContactListApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -4717,7 +4716,7 @@ export class ContactListApi {
      * @param fields Fields model
      * @param {*} [options] Override http request options.
      */
-    public listsRemoveDuplicatesByListIdPut (listId: number, fields: Fields, options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public listsRemoveDuplicatesByListIdPut (listId: number, fields: Fields, options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/lists/{list_id}/remove-duplicates'
             .replace('{' + 'list_id' + '}', encodeURIComponent(String(listId)));
         let localVarQueryParameters: any = {};
@@ -4759,7 +4758,7 @@ export class ContactListApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -4835,7 +4834,7 @@ export class CountriesApi {
      * @summary Get all country codes
      * @param {*} [options] Override http request options.
      */
-    public countriesGet (options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public countriesGet (options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/countries';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -4863,7 +4862,7 @@ export class CountriesApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -4941,7 +4940,7 @@ export class DeliveryIssuesApi {
      * @param limit Number of records per page
      * @param {*} [options] Override http request options.
      */
-    public deliveryIssuesGet (page?: number, limit?: number, options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public deliveryIssuesGet (page?: number, limit?: number, options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/delivery-issues';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -4979,7 +4978,7 @@ export class DeliveryIssuesApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -5000,7 +4999,7 @@ export class DeliveryIssuesApi {
      * @param deliveryIssue DeliveryIssue model
      * @param {*} [options] Override http request options.
      */
-    public deliveryIssuesPost (deliveryIssue: DeliveryIssue, options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public deliveryIssuesPost (deliveryIssue: DeliveryIssue, options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/delivery-issues';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -5036,7 +5035,7 @@ export class DeliveryIssuesApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -5113,7 +5112,7 @@ export class DetectAddressApi {
      * @param uploadFile Your file to be uploaded
      * @param {*} [options] Override http request options.
      */
-    public detectAddressPost (uploadFile: UploadFile, options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public detectAddressPost (uploadFile: UploadFile, options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/post/letters/detect-address';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -5149,7 +5148,7 @@ export class DetectAddressApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -5226,7 +5225,7 @@ export class EmailDeliveryReceiptRulesApi {
      * @param receiptRuleId Receipt rule id
      * @param {*} [options] Override http request options.
      */
-    public emailDeliveryReceiptAutomationDelete (receiptRuleId: number, options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public emailDeliveryReceiptAutomationDelete (receiptRuleId: number, options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/automations/email/receipts/{receipt_rule_id}'
             .replace('{' + 'receipt_rule_id' + '}', encodeURIComponent(String(receiptRuleId)));
         let localVarQueryParameters: any = {};
@@ -5262,7 +5261,7 @@ export class EmailDeliveryReceiptRulesApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -5283,7 +5282,7 @@ export class EmailDeliveryReceiptRulesApi {
      * @param receiptRuleId Receipt rule id
      * @param {*} [options] Override http request options.
      */
-    public emailDeliveryReceiptAutomationGet (receiptRuleId: number, options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public emailDeliveryReceiptAutomationGet (receiptRuleId: number, options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/automations/email/receipts/{receipt_rule_id}'
             .replace('{' + 'receipt_rule_id' + '}', encodeURIComponent(String(receiptRuleId)));
         let localVarQueryParameters: any = {};
@@ -5319,7 +5318,7 @@ export class EmailDeliveryReceiptRulesApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -5340,7 +5339,7 @@ export class EmailDeliveryReceiptRulesApi {
      * @param deliveryReceiptRule Email delivery receipt rule model
      * @param {*} [options] Override http request options.
      */
-    public emailDeliveryReceiptAutomationPost (deliveryReceiptRule: DeliveryReceiptRule, options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public emailDeliveryReceiptAutomationPost (deliveryReceiptRule: DeliveryReceiptRule, options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/automations/email/receipts';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -5376,7 +5375,7 @@ export class EmailDeliveryReceiptRulesApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -5398,7 +5397,7 @@ export class EmailDeliveryReceiptRulesApi {
      * @param deliveryReceiptRule Delivery receipt rule model
      * @param {*} [options] Override http request options.
      */
-    public emailDeliveryReceiptAutomationPut (receiptRuleId: number, deliveryReceiptRule: DeliveryReceiptRule, options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public emailDeliveryReceiptAutomationPut (receiptRuleId: number, deliveryReceiptRule: DeliveryReceiptRule, options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/automations/email/receipts/{receipt_rule_id}'
             .replace('{' + 'receipt_rule_id' + '}', encodeURIComponent(String(receiptRuleId)));
         let localVarQueryParameters: any = {};
@@ -5440,7 +5439,7 @@ export class EmailDeliveryReceiptRulesApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -5463,7 +5462,7 @@ export class EmailDeliveryReceiptRulesApi {
      * @param limit Number of records per page
      * @param {*} [options] Override http request options.
      */
-    public emailDeliveryReceiptAutomationsGet (q?: string, page?: number, limit?: number, options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public emailDeliveryReceiptAutomationsGet (q?: string, page?: number, limit?: number, options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/automations/email/receipts';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -5505,7 +5504,7 @@ export class EmailDeliveryReceiptRulesApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -5583,7 +5582,7 @@ export class EmailMarketingApi {
      * @param limit Number of records per page
      * @param {*} [options] Override http request options.
      */
-    public allowedEmailAddressGet (page?: number, limit?: number, options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public allowedEmailAddressGet (page?: number, limit?: number, options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/email/addresses';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -5621,7 +5620,7 @@ export class EmailMarketingApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -5642,7 +5641,7 @@ export class EmailMarketingApi {
      * @param emailAddress 
      * @param {*} [options] Override http request options.
      */
-    public allowedEmailAddressPost (emailAddress?: EmailAddress, options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public allowedEmailAddressPost (emailAddress?: EmailAddress, options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/email/addresses';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -5673,7 +5672,7 @@ export class EmailMarketingApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -5694,7 +5693,7 @@ export class EmailMarketingApi {
      * @param emailCampaignId Allowed email campaign id
      * @param {*} [options] Override http request options.
      */
-    public cancelEmailCampaignPut (emailCampaignId: number, options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public cancelEmailCampaignPut (emailCampaignId: number, options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/email-campaigns/{email_campaign_id}/cancel'
             .replace('{' + 'email_campaign_id' + '}', encodeURIComponent(String(emailCampaignId)));
         let localVarQueryParameters: any = {};
@@ -5730,7 +5729,7 @@ export class EmailMarketingApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -5751,7 +5750,7 @@ export class EmailMarketingApi {
      * @param emailCampaignId Allowed email campaign id
      * @param {*} [options] Override http request options.
      */
-    public emailCampaignGet (emailCampaignId: number, options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public emailCampaignGet (emailCampaignId: number, options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/email-campaigns/{email_campaign_id}'
             .replace('{' + 'email_campaign_id' + '}', encodeURIComponent(String(emailCampaignId)));
         let localVarQueryParameters: any = {};
@@ -5787,7 +5786,7 @@ export class EmailMarketingApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -5810,7 +5809,7 @@ export class EmailMarketingApi {
      * @param dateTo End date
      * @param {*} [options] Override http request options.
      */
-    public emailCampaignHistoryExportGet (emailCampaignId: number, dateFrom?: number, dateTo?: number, options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public emailCampaignHistoryExportGet (emailCampaignId: number, dateFrom?: number, dateTo?: number, options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/email-campaigns/{email_campaign_id}/history/export'
             .replace('{' + 'email_campaign_id' + '}', encodeURIComponent(String(emailCampaignId)));
         let localVarQueryParameters: any = {};
@@ -5854,7 +5853,7 @@ export class EmailMarketingApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -5879,7 +5878,7 @@ export class EmailMarketingApi {
      * @param limit Number of records per page
      * @param {*} [options] Override http request options.
      */
-    public emailCampaignHistoryGet (emailCampaignId: number, dateFrom?: number, dateTo?: number, page?: number, limit?: number, options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public emailCampaignHistoryGet (emailCampaignId: number, dateFrom?: number, dateTo?: number, page?: number, limit?: number, options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/email-campaigns/{email_campaign_id}/history'
             .replace('{' + 'email_campaign_id' + '}', encodeURIComponent(String(emailCampaignId)));
         let localVarQueryParameters: any = {};
@@ -5931,7 +5930,7 @@ export class EmailMarketingApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -5952,7 +5951,7 @@ export class EmailMarketingApi {
      * @param emailCampaign Email model
      * @param {*} [options] Override http request options.
      */
-    public emailCampaignPost (emailCampaign: EmailCampaign, options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public emailCampaignPost (emailCampaign: EmailCampaign, options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/email-campaigns/send';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -5988,7 +5987,7 @@ export class EmailMarketingApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -6009,7 +6008,7 @@ export class EmailMarketingApi {
      * @param emailCampaign Email model
      * @param {*} [options] Override http request options.
      */
-    public emailCampaignPricePost (emailCampaign: EmailCampaign, options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public emailCampaignPricePost (emailCampaign: EmailCampaign, options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/email-campaigns/price';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -6045,7 +6044,7 @@ export class EmailMarketingApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -6067,7 +6066,7 @@ export class EmailMarketingApi {
      * @param emailCampaign Email model
      * @param {*} [options] Override http request options.
      */
-    public emailCampaignPut (emailCampaignId: number, emailCampaign: EmailCampaign, options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public emailCampaignPut (emailCampaignId: number, emailCampaign: EmailCampaign, options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/email-campaigns/{email_campaign_id}'
             .replace('{' + 'email_campaign_id' + '}', encodeURIComponent(String(emailCampaignId)));
         let localVarQueryParameters: any = {};
@@ -6109,7 +6108,7 @@ export class EmailMarketingApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -6131,7 +6130,7 @@ export class EmailMarketingApi {
      * @param limit Number of records per page
      * @param {*} [options] Override http request options.
      */
-    public emailCampaignsGet (page?: number, limit?: number, options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public emailCampaignsGet (page?: number, limit?: number, options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/email-campaigns';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -6169,7 +6168,7 @@ export class EmailMarketingApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -6190,7 +6189,7 @@ export class EmailMarketingApi {
      * @param emailAddressId Allowed email address id
      * @param {*} [options] Override http request options.
      */
-    public sendVerificationTokenGet (emailAddressId: number, options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public sendVerificationTokenGet (emailAddressId: number, options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/email/address-verify/{email_address_id}/send'
             .replace('{' + 'email_address_id' + '}', encodeURIComponent(String(emailAddressId)));
         let localVarQueryParameters: any = {};
@@ -6226,7 +6225,7 @@ export class EmailMarketingApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -6247,7 +6246,7 @@ export class EmailMarketingApi {
      * @param emailAddressId Allowed email address id
      * @param {*} [options] Override http request options.
      */
-    public specificAllowedEmailAddressDelete (emailAddressId: number, options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public specificAllowedEmailAddressDelete (emailAddressId: number, options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/email/addresses/{email_address_id}'
             .replace('{' + 'email_address_id' + '}', encodeURIComponent(String(emailAddressId)));
         let localVarQueryParameters: any = {};
@@ -6283,7 +6282,7 @@ export class EmailMarketingApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -6304,7 +6303,7 @@ export class EmailMarketingApi {
      * @param emailAddressId Allowed email address id
      * @param {*} [options] Override http request options.
      */
-    public specificAllowedEmailAddressGet (emailAddressId: number, options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public specificAllowedEmailAddressGet (emailAddressId: number, options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/email/addresses/{email_address_id}'
             .replace('{' + 'email_address_id' + '}', encodeURIComponent(String(emailAddressId)));
         let localVarQueryParameters: any = {};
@@ -6340,7 +6339,7 @@ export class EmailMarketingApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -6362,7 +6361,7 @@ export class EmailMarketingApi {
      * @param activationToken Your activation token.
      * @param {*} [options] Override http request options.
      */
-    public verifyAllowedEmailAddressGet (emailAddressId: number, activationToken: string, options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public verifyAllowedEmailAddressGet (emailAddressId: number, activationToken: string, options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/email/address-verify/{email_address_id}/verify/{activation_token}'
             .replace('{' + 'email_address_id' + '}', encodeURIComponent(String(emailAddressId)))
             .replace('{' + 'activation_token' + '}', encodeURIComponent(String(activationToken)));
@@ -6404,7 +6403,7 @@ export class EmailMarketingApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -6482,7 +6481,7 @@ export class EmailToSmsApi {
      * @param limit Number of records per page
      * @param {*} [options] Override http request options.
      */
-    public smsEmailSmsGet (page?: number, limit?: number, options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public smsEmailSmsGet (page?: number, limit?: number, options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/sms/email-sms';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -6520,7 +6519,7 @@ export class EmailToSmsApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -6541,7 +6540,7 @@ export class EmailToSmsApi {
      * @param emailSmsAddress EmailSMSAddress model
      * @param {*} [options] Override http request options.
      */
-    public smsEmailSmsPost (emailSmsAddress: EmailSMSAddress, options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public smsEmailSmsPost (emailSmsAddress: EmailSMSAddress, options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/sms/email-sms';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -6577,7 +6576,7 @@ export class EmailToSmsApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -6598,7 +6597,7 @@ export class EmailToSmsApi {
      * @param ruleId Your rule id
      * @param {*} [options] Override http request options.
      */
-    public smsEmailSmsStrippedStringDelete (ruleId: number, options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public smsEmailSmsStrippedStringDelete (ruleId: number, options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/sms/email-sms-stripped-strings/{rule_id}'
             .replace('{' + 'rule_id' + '}', encodeURIComponent(String(ruleId)));
         let localVarQueryParameters: any = {};
@@ -6634,7 +6633,7 @@ export class EmailToSmsApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -6655,7 +6654,7 @@ export class EmailToSmsApi {
      * @param ruleId Your rule id
      * @param {*} [options] Override http request options.
      */
-    public smsEmailSmsStrippedStringGet (ruleId: number, options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public smsEmailSmsStrippedStringGet (ruleId: number, options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/sms/email-sms-stripped-strings/{rule_id}'
             .replace('{' + 'rule_id' + '}', encodeURIComponent(String(ruleId)));
         let localVarQueryParameters: any = {};
@@ -6691,7 +6690,7 @@ export class EmailToSmsApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -6712,7 +6711,7 @@ export class EmailToSmsApi {
      * @param strippedString StrippedString model
      * @param {*} [options] Override http request options.
      */
-    public smsEmailSmsStrippedStringPost (strippedString: StrippedString, options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public smsEmailSmsStrippedStringPost (strippedString: StrippedString, options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/sms/email-sms-stripped-strings';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -6748,7 +6747,7 @@ export class EmailToSmsApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -6770,7 +6769,7 @@ export class EmailToSmsApi {
      * @param ruleId Your rule id
      * @param {*} [options] Override http request options.
      */
-    public smsEmailSmsStrippedStringPut (strippedString: StrippedString, ruleId: number, options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public smsEmailSmsStrippedStringPut (strippedString: StrippedString, ruleId: number, options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/sms/email-sms-stripped-strings/{rule_id}'
             .replace('{' + 'rule_id' + '}', encodeURIComponent(String(ruleId)));
         let localVarQueryParameters: any = {};
@@ -6812,7 +6811,7 @@ export class EmailToSmsApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -6834,7 +6833,7 @@ export class EmailToSmsApi {
      * @param limit Number of records per page
      * @param {*} [options] Override http request options.
      */
-    public smsEmailSmsStrippedStringsGet (page?: number, limit?: number, options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public smsEmailSmsStrippedStringsGet (page?: number, limit?: number, options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/sms/email-sms-stripped-strings';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -6872,7 +6871,7 @@ export class EmailToSmsApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -6954,7 +6953,7 @@ export class FAXApi {
      * @param limit Number of records per page
      * @param {*} [options] Override http request options.
      */
-    public faxHistoryGet (dateFrom?: number, dateTo?: number, q?: string, order?: string, page?: number, limit?: number, options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public faxHistoryGet (dateFrom?: number, dateTo?: number, q?: string, order?: string, page?: number, limit?: number, options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/fax/history';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -7008,7 +7007,7 @@ export class FAXApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -7029,7 +7028,7 @@ export class FAXApi {
      * @param faxMessage FaxMessageCollection model
      * @param {*} [options] Override http request options.
      */
-    public faxPricePost (faxMessage: FaxMessageCollection, options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public faxPricePost (faxMessage: FaxMessageCollection, options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/fax/price';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -7065,7 +7064,7 @@ export class FAXApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -7086,7 +7085,7 @@ export class FAXApi {
      * @param messageId ID of the message receipt to retrieve
      * @param {*} [options] Override http request options.
      */
-    public faxReceiptsByMessageIdGet (messageId: string, options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public faxReceiptsByMessageIdGet (messageId: string, options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/fax/receipts/{message_id}'
             .replace('{' + 'message_id' + '}', encodeURIComponent(String(messageId)));
         let localVarQueryParameters: any = {};
@@ -7122,7 +7121,7 @@ export class FAXApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -7144,7 +7143,7 @@ export class FAXApi {
      * @param limit Number of records per page
      * @param {*} [options] Override http request options.
      */
-    public faxReceiptsGet (page?: number, limit?: number, options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public faxReceiptsGet (page?: number, limit?: number, options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/fax/receipts';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -7182,7 +7181,7 @@ export class FAXApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -7203,7 +7202,7 @@ export class FAXApi {
      * @param url Url model
      * @param {*} [options] Override http request options.
      */
-    public faxReceiptsPost (url: Url, options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public faxReceiptsPost (url: Url, options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/fax/receipts';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -7239,7 +7238,7 @@ export class FAXApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -7260,7 +7259,7 @@ export class FAXApi {
      * @param dateBefore DateBefore model
      * @param {*} [options] Override http request options.
      */
-    public faxReceiptsReadPut (dateBefore?: DateBefore, options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public faxReceiptsReadPut (dateBefore?: DateBefore, options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/fax/receipts-read';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -7291,7 +7290,7 @@ export class FAXApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -7312,7 +7311,7 @@ export class FAXApi {
      * @param faxMessage FaxMessageCollection model
      * @param {*} [options] Override http request options.
      */
-    public faxSendPost (faxMessage: FaxMessageCollection, options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public faxSendPost (faxMessage: FaxMessageCollection, options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/fax/send';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -7348,7 +7347,7 @@ export class FAXApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -7425,7 +7424,7 @@ export class FAXDeliveryReceiptRulesApi {
      * @param receiptRuleId Receipt rule id
      * @param {*} [options] Override http request options.
      */
-    public faxDeliveryReceiptAutomationDelete (receiptRuleId: number, options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public faxDeliveryReceiptAutomationDelete (receiptRuleId: number, options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/automations/fax/receipts/{receipt_rule_id}'
             .replace('{' + 'receipt_rule_id' + '}', encodeURIComponent(String(receiptRuleId)));
         let localVarQueryParameters: any = {};
@@ -7461,7 +7460,7 @@ export class FAXDeliveryReceiptRulesApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -7482,7 +7481,7 @@ export class FAXDeliveryReceiptRulesApi {
      * @param receiptRuleId Receipt rule id
      * @param {*} [options] Override http request options.
      */
-    public faxDeliveryReceiptAutomationGet (receiptRuleId: number, options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public faxDeliveryReceiptAutomationGet (receiptRuleId: number, options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/automations/fax/receipts/{receipt_rule_id}'
             .replace('{' + 'receipt_rule_id' + '}', encodeURIComponent(String(receiptRuleId)));
         let localVarQueryParameters: any = {};
@@ -7518,7 +7517,7 @@ export class FAXDeliveryReceiptRulesApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -7539,7 +7538,7 @@ export class FAXDeliveryReceiptRulesApi {
      * @param deliveryReceiptRule fax delivery receipt rule model
      * @param {*} [options] Override http request options.
      */
-    public faxDeliveryReceiptAutomationPost (deliveryReceiptRule: DeliveryReceiptRule, options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public faxDeliveryReceiptAutomationPost (deliveryReceiptRule: DeliveryReceiptRule, options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/automations/fax/receipts';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -7575,7 +7574,7 @@ export class FAXDeliveryReceiptRulesApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -7597,7 +7596,7 @@ export class FAXDeliveryReceiptRulesApi {
      * @param deliveryReceiptRule Delivery receipt rule model
      * @param {*} [options] Override http request options.
      */
-    public faxDeliveryReceiptAutomationPut (receiptRuleId: number, deliveryReceiptRule: DeliveryReceiptRule, options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public faxDeliveryReceiptAutomationPut (receiptRuleId: number, deliveryReceiptRule: DeliveryReceiptRule, options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/automations/fax/receipts/{receipt_rule_id}'
             .replace('{' + 'receipt_rule_id' + '}', encodeURIComponent(String(receiptRuleId)));
         let localVarQueryParameters: any = {};
@@ -7639,7 +7638,7 @@ export class FAXDeliveryReceiptRulesApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -7662,7 +7661,7 @@ export class FAXDeliveryReceiptRulesApi {
      * @param limit Number of records per page
      * @param {*} [options] Override http request options.
      */
-    public faxDeliveryReceiptAutomationsGet (q?: string, page?: number, limit?: number, options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public faxDeliveryReceiptAutomationsGet (q?: string, page?: number, limit?: number, options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/automations/fax/receipts';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -7704,7 +7703,7 @@ export class FAXDeliveryReceiptRulesApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -7781,7 +7780,7 @@ export class InboundFAXRulesApi {
      * @param inboundRuleId Inbound rule id
      * @param {*} [options] Override http request options.
      */
-    public faxInboundAutomationDelete (inboundRuleId: number, options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public faxInboundAutomationDelete (inboundRuleId: number, options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/automations/fax/inbound/{inbound_rule_id}'
             .replace('{' + 'inbound_rule_id' + '}', encodeURIComponent(String(inboundRuleId)));
         let localVarQueryParameters: any = {};
@@ -7817,7 +7816,7 @@ export class InboundFAXRulesApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -7838,7 +7837,7 @@ export class InboundFAXRulesApi {
      * @param inboundRuleId Inbound rule id
      * @param {*} [options] Override http request options.
      */
-    public faxInboundAutomationGet (inboundRuleId: number, options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public faxInboundAutomationGet (inboundRuleId: number, options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/automations/fax/inbound/{inbound_rule_id}'
             .replace('{' + 'inbound_rule_id' + '}', encodeURIComponent(String(inboundRuleId)));
         let localVarQueryParameters: any = {};
@@ -7874,7 +7873,7 @@ export class InboundFAXRulesApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -7895,7 +7894,7 @@ export class InboundFAXRulesApi {
      * @param inboundFaxRule Inbound fax rule model
      * @param {*} [options] Override http request options.
      */
-    public faxInboundAutomationPost (inboundFaxRule: InboundFaxRule, options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public faxInboundAutomationPost (inboundFaxRule: InboundFaxRule, options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/automations/fax/inbound';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -7931,7 +7930,7 @@ export class InboundFAXRulesApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -7953,7 +7952,7 @@ export class InboundFAXRulesApi {
      * @param inboundFaxRule Inbound fax rule model
      * @param {*} [options] Override http request options.
      */
-    public faxInboundAutomationPut (inboundRuleId: number, inboundFaxRule: InboundFaxRule, options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public faxInboundAutomationPut (inboundRuleId: number, inboundFaxRule: InboundFaxRule, options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/automations/fax/inbound/{inbound_rule_id}'
             .replace('{' + 'inbound_rule_id' + '}', encodeURIComponent(String(inboundRuleId)));
         let localVarQueryParameters: any = {};
@@ -7995,7 +7994,7 @@ export class InboundFAXRulesApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -8018,7 +8017,7 @@ export class InboundFAXRulesApi {
      * @param limit Number of records per page
      * @param {*} [options] Override http request options.
      */
-    public faxInboundAutomationsGet (q?: string, page?: number, limit?: number, options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public faxInboundAutomationsGet (q?: string, page?: number, limit?: number, options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/automations/fax/inbound';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -8060,7 +8059,7 @@ export class InboundFAXRulesApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -8137,7 +8136,7 @@ export class InboundSMSRulesApi {
      * @param inboundRuleId Inbound rule id
      * @param {*} [options] Override http request options.
      */
-    public smsInboundAutomationDelete (inboundRuleId: number, options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public smsInboundAutomationDelete (inboundRuleId: number, options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/automations/sms/inbound/{inbound_rule_id}'
             .replace('{' + 'inbound_rule_id' + '}', encodeURIComponent(String(inboundRuleId)));
         let localVarQueryParameters: any = {};
@@ -8173,7 +8172,7 @@ export class InboundSMSRulesApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -8194,7 +8193,7 @@ export class InboundSMSRulesApi {
      * @param inboundRuleId Inbound rule id
      * @param {*} [options] Override http request options.
      */
-    public smsInboundAutomationGet (inboundRuleId: number, options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public smsInboundAutomationGet (inboundRuleId: number, options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/automations/sms/inbound/{inbound_rule_id}'
             .replace('{' + 'inbound_rule_id' + '}', encodeURIComponent(String(inboundRuleId)));
         let localVarQueryParameters: any = {};
@@ -8230,7 +8229,7 @@ export class InboundSMSRulesApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -8251,7 +8250,7 @@ export class InboundSMSRulesApi {
      * @param inboundSmsRule Inbound sms rule model
      * @param {*} [options] Override http request options.
      */
-    public smsInboundAutomationPost (inboundSmsRule: InboundSMSRule, options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public smsInboundAutomationPost (inboundSmsRule: InboundSMSRule, options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/automations/sms/inbound';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -8287,7 +8286,7 @@ export class InboundSMSRulesApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -8309,7 +8308,7 @@ export class InboundSMSRulesApi {
      * @param inboundSmsRule Inbound sms rule model
      * @param {*} [options] Override http request options.
      */
-    public smsInboundAutomationPut (inboundRuleId: number, inboundSmsRule: InboundSMSRule, options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public smsInboundAutomationPut (inboundRuleId: number, inboundSmsRule: InboundSMSRule, options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/automations/sms/inbound/{inbound_rule_id}'
             .replace('{' + 'inbound_rule_id' + '}', encodeURIComponent(String(inboundRuleId)));
         let localVarQueryParameters: any = {};
@@ -8351,7 +8350,7 @@ export class InboundSMSRulesApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -8374,7 +8373,7 @@ export class InboundSMSRulesApi {
      * @param limit Number of records per page
      * @param {*} [options] Override http request options.
      */
-    public smsInboundAutomationsGet (q?: string, page?: number, limit?: number, options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public smsInboundAutomationsGet (q?: string, page?: number, limit?: number, options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/automations/sms/inbound';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -8416,7 +8415,7 @@ export class InboundSMSRulesApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -8493,7 +8492,7 @@ export class MMSApi {
      * @param mmsMessages MmsMessageCollection model
      * @param {*} [options] Override http request options.
      */
-    public mmsPricePost (mmsMessages: MmsMessageCollection, options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public mmsPricePost (mmsMessages: MmsMessageCollection, options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/mms/price';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -8529,7 +8528,7 @@ export class MMSApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -8551,7 +8550,7 @@ export class MMSApi {
      * @param limit Number of records per page
      * @param {*} [options] Override http request options.
      */
-    public mmsReceiptsGet (page?: number, limit?: number, options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public mmsReceiptsGet (page?: number, limit?: number, options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/mms/receipts';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -8589,7 +8588,7 @@ export class MMSApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -8610,7 +8609,7 @@ export class MMSApi {
      * @param dateBefore DateBefore model
      * @param {*} [options] Override http request options.
      */
-    public mmsReceiptsReadPut (dateBefore?: DateBefore, options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public mmsReceiptsReadPut (dateBefore?: DateBefore, options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/mms/receipts-read';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -8641,7 +8640,7 @@ export class MMSApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -8662,7 +8661,7 @@ export class MMSApi {
      * @param mmsMessages MmsMessageCollection model
      * @param {*} [options] Override http request options.
      */
-    public mmsSendPost (mmsMessages: MmsMessageCollection, options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public mmsSendPost (mmsMessages: MmsMessageCollection, options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/mms/send';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -8698,7 +8697,7 @@ export class MMSApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -8776,7 +8775,7 @@ export class MasterEmailTemplatesApi {
      * @param limit Number of records per page
      * @param {*} [options] Override http request options.
      */
-    public masterEmailTemplateCategoriesGet (page?: number, limit?: number, options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public masterEmailTemplateCategoriesGet (page?: number, limit?: number, options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/email/master-templates-categories';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -8814,7 +8813,7 @@ export class MasterEmailTemplatesApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -8835,7 +8834,7 @@ export class MasterEmailTemplatesApi {
      * @param categoryId Email category id
      * @param {*} [options] Override http request options.
      */
-    public masterEmailTemplateCategoryGet (categoryId: number, options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public masterEmailTemplateCategoryGet (categoryId: number, options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/email/master-templates-categories/{category_id}'
             .replace('{' + 'category_id' + '}', encodeURIComponent(String(categoryId)));
         let localVarQueryParameters: any = {};
@@ -8871,7 +8870,7 @@ export class MasterEmailTemplatesApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -8892,7 +8891,7 @@ export class MasterEmailTemplatesApi {
      * @param templateId Email template id
      * @param {*} [options] Override http request options.
      */
-    public masterEmailTemplateGet (templateId: number, options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public masterEmailTemplateGet (templateId: number, options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/email/master-templates/{template_id}'
             .replace('{' + 'template_id' + '}', encodeURIComponent(String(templateId)));
         let localVarQueryParameters: any = {};
@@ -8928,7 +8927,7 @@ export class MasterEmailTemplatesApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -8950,7 +8949,7 @@ export class MasterEmailTemplatesApi {
      * @param limit Number of records per page
      * @param {*} [options] Override http request options.
      */
-    public masterEmailTemplatesGet (page?: number, limit?: number, options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public masterEmailTemplatesGet (page?: number, limit?: number, options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/email/master-templates';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -8988,7 +8987,7 @@ export class MasterEmailTemplatesApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -9011,7 +9010,7 @@ export class MasterEmailTemplatesApi {
      * @param limit Number of records per page
      * @param {*} [options] Override http request options.
      */
-    public masterEmailTemplatesInCategoryGet (categoryId: number, page?: number, limit?: number, options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public masterEmailTemplatesInCategoryGet (categoryId: number, page?: number, limit?: number, options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/email/master-templates-categories/{category_id}/master-templates'
             .replace('{' + 'category_id' + '}', encodeURIComponent(String(categoryId)));
         let localVarQueryParameters: any = {};
@@ -9055,7 +9054,7 @@ export class MasterEmailTemplatesApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -9132,7 +9131,7 @@ export class MmsCampaignApi {
      * @param mmsCampaignId ID of MMS campaign to retrieve
      * @param {*} [options] Override http request options.
      */
-    public mmsCampaignByMmsCampaignIdGet (mmsCampaignId: number, options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public mmsCampaignByMmsCampaignIdGet (mmsCampaignId: number, options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/mms-campaigns/{mms_campaign_id}'
             .replace('{' + 'mms_campaign_id' + '}', encodeURIComponent(String(mmsCampaignId)));
         let localVarQueryParameters: any = {};
@@ -9168,7 +9167,7 @@ export class MmsCampaignApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -9190,7 +9189,7 @@ export class MmsCampaignApi {
      * @param campaign MmsCampaign model
      * @param {*} [options] Override http request options.
      */
-    public mmsCampaignsByMmsCampaignIdPut (mmsCampaignId: number, campaign: MmsCampaign, options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public mmsCampaignsByMmsCampaignIdPut (mmsCampaignId: number, campaign: MmsCampaign, options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/mms-campaigns/{mms_campaign_id}'
             .replace('{' + 'mms_campaign_id' + '}', encodeURIComponent(String(mmsCampaignId)));
         let localVarQueryParameters: any = {};
@@ -9232,7 +9231,7 @@ export class MmsCampaignApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -9253,7 +9252,7 @@ export class MmsCampaignApi {
      * @param mmsCampaignId ID of MMS Campaign to cancel
      * @param {*} [options] Override http request options.
      */
-    public mmsCampaignsCancelByMmsCampaignIdPut (mmsCampaignId: number, options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public mmsCampaignsCancelByMmsCampaignIdPut (mmsCampaignId: number, options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/mms-campaigns/{mms_campaign_id}/cancel'
             .replace('{' + 'mms_campaign_id' + '}', encodeURIComponent(String(mmsCampaignId)));
         let localVarQueryParameters: any = {};
@@ -9289,7 +9288,7 @@ export class MmsCampaignApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -9311,7 +9310,7 @@ export class MmsCampaignApi {
      * @param limit Number of records per page
      * @param {*} [options] Override http request options.
      */
-    public mmsCampaignsGet (page?: number, limit?: number, options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public mmsCampaignsGet (page?: number, limit?: number, options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/mms-campaigns';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -9349,7 +9348,7 @@ export class MmsCampaignApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -9370,7 +9369,7 @@ export class MmsCampaignApi {
      * @param campaign MmsCampaign model
      * @param {*} [options] Override http request options.
      */
-    public mmsCampaignsPricePost (campaign: MmsCampaign, options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public mmsCampaignsPricePost (campaign: MmsCampaign, options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/mms-campaigns/price';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -9406,7 +9405,7 @@ export class MmsCampaignApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -9427,7 +9426,7 @@ export class MmsCampaignApi {
      * @param campaign MmsCampaign model
      * @param {*} [options] Override http request options.
      */
-    public mmsCampaignsSendPost (campaign: MmsCampaign, options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public mmsCampaignsSendPost (campaign: MmsCampaign, options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/mms-campaigns/send';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -9463,7 +9462,7 @@ export class MmsCampaignApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -9540,7 +9539,7 @@ export class NumberApi {
      * @param dedicatedNumber Phone number to purchase
      * @param {*} [options] Override http request options.
      */
-    public numbersBuyByDedicatedNumberPost (dedicatedNumber: string, options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public numbersBuyByDedicatedNumberPost (dedicatedNumber: string, options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/numbers/buy/{dedicated_number}'
             .replace('{' + 'dedicated_number' + '}', encodeURIComponent(String(dedicatedNumber)));
         let localVarQueryParameters: any = {};
@@ -9576,7 +9575,7 @@ export class NumberApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -9598,7 +9597,7 @@ export class NumberApi {
      * @param limit Number of records per page
      * @param {*} [options] Override http request options.
      */
-    public numbersGet (page?: number, limit?: number, options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public numbersGet (page?: number, limit?: number, options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/numbers';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -9636,7 +9635,7 @@ export class NumberApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -9661,7 +9660,7 @@ export class NumberApi {
      * @param limit Number of records per page
      * @param {*} [options] Override http request options.
      */
-    public numbersSearchByCountryGet (country: string, search?: string, searchType?: number, page?: number, limit?: number, options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public numbersSearchByCountryGet (country: string, search?: string, searchType?: number, page?: number, limit?: number, options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/numbers/search/{country}'
             .replace('{' + 'country' + '}', encodeURIComponent(String(country)));
         let localVarQueryParameters: any = {};
@@ -9713,7 +9712,7 @@ export class NumberApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -9790,7 +9789,7 @@ export class PostLetterApi {
      * @param filename Filename to export to
      * @param {*} [options] Override http request options.
      */
-    public postLettersExportGet (filename: string, options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public postLettersExportGet (filename: string, options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/post/letters/history/export';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -9829,7 +9828,7 @@ export class PostLetterApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -9851,7 +9850,7 @@ export class PostLetterApi {
      * @param limit Number of records per page
      * @param {*} [options] Override http request options.
      */
-    public postLettersHistoryGet (page?: number, limit?: number, options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public postLettersHistoryGet (page?: number, limit?: number, options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/post/letters/history';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -9889,7 +9888,7 @@ export class PostLetterApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -9910,7 +9909,7 @@ export class PostLetterApi {
      * @param postLetter PostLetter model
      * @param {*} [options] Override http request options.
      */
-    public postLettersPricePost (postLetter: PostLetter, options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public postLettersPricePost (postLetter: PostLetter, options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/post/letters/price';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -9946,7 +9945,7 @@ export class PostLetterApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -9967,7 +9966,7 @@ export class PostLetterApi {
      * @param postLetter PostLetter model
      * @param {*} [options] Override http request options.
      */
-    public postLettersSendPost (postLetter: PostLetter, options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public postLettersSendPost (postLetter: PostLetter, options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/post/letters/send';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -10003,7 +10002,7 @@ export class PostLetterApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -10080,7 +10079,7 @@ export class PostPostcardApi {
      * @param filename Filename to export to
      * @param {*} [options] Override http request options.
      */
-    public postPostcardsHistoryExportGet (filename: string, options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public postPostcardsHistoryExportGet (filename: string, options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/post/postcards/history/export';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -10119,7 +10118,7 @@ export class PostPostcardApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -10141,7 +10140,7 @@ export class PostPostcardApi {
      * @param limit Number of records per page
      * @param {*} [options] Override http request options.
      */
-    public postPostcardsHistoryGet (page?: number, limit?: number, options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public postPostcardsHistoryGet (page?: number, limit?: number, options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/post/postcards/history';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -10179,7 +10178,7 @@ export class PostPostcardApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -10200,7 +10199,7 @@ export class PostPostcardApi {
      * @param postPostcards PostPostcard model
      * @param {*} [options] Override http request options.
      */
-    public postPostcardsPricePost (postPostcards: PostPostcard, options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public postPostcardsPricePost (postPostcards: PostPostcard, options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/post/postcards/price';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -10236,7 +10235,7 @@ export class PostPostcardApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -10257,7 +10256,7 @@ export class PostPostcardApi {
      * @param postPostcards PostPostcard model
      * @param {*} [options] Override http request options.
      */
-    public postPostcardsSendPost (postPostcards: PostPostcard, options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public postPostcardsSendPost (postPostcards: PostPostcard, options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/post/postcards/send';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -10293,7 +10292,7 @@ export class PostPostcardApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -10370,7 +10369,7 @@ export class PostReturnAddressApi {
      * @param returnAddressId Return address ID
      * @param {*} [options] Override http request options.
      */
-    public postReturnAddressesByReturnAddressIdDelete (returnAddressId: number, options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public postReturnAddressesByReturnAddressIdDelete (returnAddressId: number, options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/post/return-addresses/{return_address_id}'
             .replace('{' + 'return_address_id' + '}', encodeURIComponent(String(returnAddressId)));
         let localVarQueryParameters: any = {};
@@ -10406,7 +10405,7 @@ export class PostReturnAddressApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -10427,7 +10426,7 @@ export class PostReturnAddressApi {
      * @param returnAddressId Return address ID
      * @param {*} [options] Override http request options.
      */
-    public postReturnAddressesByReturnAddressIdGet (returnAddressId: number, options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public postReturnAddressesByReturnAddressIdGet (returnAddressId: number, options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/post/return-addresses/{return_address_id}'
             .replace('{' + 'return_address_id' + '}', encodeURIComponent(String(returnAddressId)));
         let localVarQueryParameters: any = {};
@@ -10463,7 +10462,7 @@ export class PostReturnAddressApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -10485,7 +10484,7 @@ export class PostReturnAddressApi {
      * @param returnAddress Address model
      * @param {*} [options] Override http request options.
      */
-    public postReturnAddressesByReturnAddressIdPut (returnAddressId: number, returnAddress: Address, options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public postReturnAddressesByReturnAddressIdPut (returnAddressId: number, returnAddress: Address, options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/post/return-addresses/{return_address_id}'
             .replace('{' + 'return_address_id' + '}', encodeURIComponent(String(returnAddressId)));
         let localVarQueryParameters: any = {};
@@ -10527,7 +10526,7 @@ export class PostReturnAddressApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -10549,7 +10548,7 @@ export class PostReturnAddressApi {
      * @param limit Number of records per page
      * @param {*} [options] Override http request options.
      */
-    public postReturnAddressesGet (page?: number, limit?: number, options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public postReturnAddressesGet (page?: number, limit?: number, options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/post/return-addresses';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -10587,7 +10586,7 @@ export class PostReturnAddressApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -10608,7 +10607,7 @@ export class PostReturnAddressApi {
      * @param returnAddress Address model
      * @param {*} [options] Override http request options.
      */
-    public postReturnAddressesPost (returnAddress: Address, options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public postReturnAddressesPost (returnAddress: Address, options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/post/return-addresses';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -10644,7 +10643,7 @@ export class PostReturnAddressApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -10722,7 +10721,7 @@ export class ReferralAccountApi {
      * @param limit Number of records per page
      * @param {*} [options] Override http request options.
      */
-    public referralAccountsGet (page?: number, limit?: number, options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public referralAccountsGet (page?: number, limit?: number, options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/referral/accounts';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -10760,7 +10759,7 @@ export class ReferralAccountApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -10837,7 +10836,7 @@ export class ResellerAccountApi {
      * @param clientUserId User ID of client
      * @param {*} [options] Override http request options.
      */
-    public resellerAccountsByClientUserIdGet (clientUserId: number, options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public resellerAccountsByClientUserIdGet (clientUserId: number, options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/reseller/accounts/{client_user_id}'
             .replace('{' + 'client_user_id' + '}', encodeURIComponent(String(clientUserId)));
         let localVarQueryParameters: any = {};
@@ -10873,7 +10872,7 @@ export class ResellerAccountApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -10895,7 +10894,7 @@ export class ResellerAccountApi {
      * @param resellerAccount ResellerAccount model
      * @param {*} [options] Override http request options.
      */
-    public resellerAccountsByClientUserIdPut (clientUserId: number, resellerAccount: ResellerAccount, options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public resellerAccountsByClientUserIdPut (clientUserId: number, resellerAccount: ResellerAccount, options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/reseller/accounts/{client_user_id}'
             .replace('{' + 'client_user_id' + '}', encodeURIComponent(String(clientUserId)));
         let localVarQueryParameters: any = {};
@@ -10937,7 +10936,7 @@ export class ResellerAccountApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -10959,7 +10958,7 @@ export class ResellerAccountApi {
      * @param limit Number of records per page
      * @param {*} [options] Override http request options.
      */
-    public resellerAccountsGet (page?: number, limit?: number, options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public resellerAccountsGet (page?: number, limit?: number, options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/reseller/accounts';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -10997,7 +10996,7 @@ export class ResellerAccountApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -11018,7 +11017,7 @@ export class ResellerAccountApi {
      * @param resellerAccount ResellerAccount model
      * @param {*} [options] Override http request options.
      */
-    public resellerAccountsPost (resellerAccount: ResellerAccount, options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public resellerAccountsPost (resellerAccount: ResellerAccount, options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/reseller/accounts';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -11054,7 +11053,7 @@ export class ResellerAccountApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -11130,7 +11129,7 @@ export class SMSApi {
      * @summary Update all scheduled message as cancelled
      * @param {*} [options] Override http request options.
      */
-    public smsCancelAllPut (options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public smsCancelAllPut (options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/sms/cancel-all';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -11160,7 +11159,7 @@ export class SMSApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -11181,7 +11180,7 @@ export class SMSApi {
      * @param messageId The message ID you want to cancel
      * @param {*} [options] Override http request options.
      */
-    public smsCancelByMessageIdPut (messageId: string, options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public smsCancelByMessageIdPut (messageId: string, options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/sms/{message_id}/cancel'
             .replace('{' + 'message_id' + '}', encodeURIComponent(String(messageId)));
         let localVarQueryParameters: any = {};
@@ -11217,7 +11216,7 @@ export class SMSApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -11238,7 +11237,7 @@ export class SMSApi {
      * @param filename Filename to download history as
      * @param {*} [options] Override http request options.
      */
-    public smsHistoryExportGet (filename: string, options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public smsHistoryExportGet (filename: string, options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/sms/history/export';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -11277,7 +11276,7 @@ export class SMSApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -11302,7 +11301,7 @@ export class SMSApi {
      * @param limit Number of records per page
      * @param {*} [options] Override http request options.
      */
-    public smsHistoryGet (q?: string, dateFrom?: number, dateTo?: number, page?: number, limit?: number, options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public smsHistoryGet (q?: string, dateFrom?: number, dateTo?: number, page?: number, limit?: number, options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/sms/history';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -11352,7 +11351,7 @@ export class SMSApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -11375,7 +11374,7 @@ export class SMSApi {
      * @param limit Number of records per page
      * @param {*} [options] Override http request options.
      */
-    public smsInboundGet (q?: string, page?: number, limit?: number, options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public smsInboundGet (q?: string, page?: number, limit?: number, options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/sms/inbound';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -11417,7 +11416,7 @@ export class SMSApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -11438,7 +11437,7 @@ export class SMSApi {
      * @param url Url model
      * @param {*} [options] Override http request options.
      */
-    public smsInboundPost (url: Url, options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public smsInboundPost (url: Url, options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/sms/inbound';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -11474,7 +11473,7 @@ export class SMSApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -11495,7 +11494,7 @@ export class SMSApi {
      * @param messageId Message ID
      * @param {*} [options] Override http request options.
      */
-    public smsInboundReadByMessageIdPut (messageId: string, options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public smsInboundReadByMessageIdPut (messageId: string, options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/sms/inbound-read/{message_id}'
             .replace('{' + 'message_id' + '}', encodeURIComponent(String(messageId)));
         let localVarQueryParameters: any = {};
@@ -11531,7 +11530,7 @@ export class SMSApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -11552,7 +11551,7 @@ export class SMSApi {
      * @param dateBefore DateBefore model
      * @param {*} [options] Override http request options.
      */
-    public smsInboundReadPut (dateBefore?: DateBefore, options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public smsInboundReadPut (dateBefore?: DateBefore, options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/sms/inbound-read';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -11583,7 +11582,7 @@ export class SMSApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -11604,7 +11603,7 @@ export class SMSApi {
      * @param smsMessages SmsMessageCollection model
      * @param {*} [options] Override http request options.
      */
-    public smsPricePost (smsMessages: SmsMessageCollection, options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public smsPricePost (smsMessages: SmsMessageCollection, options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/sms/price';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -11640,7 +11639,7 @@ export class SMSApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -11661,7 +11660,7 @@ export class SMSApi {
      * @param messageId Message ID
      * @param {*} [options] Override http request options.
      */
-    public smsReceiptsByMessageIdGet (messageId: string, options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public smsReceiptsByMessageIdGet (messageId: string, options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/sms/receipts/{message_id}'
             .replace('{' + 'message_id' + '}', encodeURIComponent(String(messageId)));
         let localVarQueryParameters: any = {};
@@ -11697,7 +11696,7 @@ export class SMSApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -11719,7 +11718,7 @@ export class SMSApi {
      * @param limit Number of records per page
      * @param {*} [options] Override http request options.
      */
-    public smsReceiptsGet (page?: number, limit?: number, options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public smsReceiptsGet (page?: number, limit?: number, options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/sms/receipts';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -11757,7 +11756,7 @@ export class SMSApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -11778,7 +11777,7 @@ export class SMSApi {
      * @param url Url model
      * @param {*} [options] Override http request options.
      */
-    public smsReceiptsPost (url: Url, options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public smsReceiptsPost (url: Url, options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/sms/receipts';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -11814,7 +11813,7 @@ export class SMSApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -11835,7 +11834,7 @@ export class SMSApi {
      * @param dateBefore DateBefore model
      * @param {*} [options] Override http request options.
      */
-    public smsReceiptsReadPut (dateBefore?: DateBefore, options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public smsReceiptsReadPut (dateBefore?: DateBefore, options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/sms/receipts-read';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -11866,7 +11865,7 @@ export class SMSApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -11887,7 +11886,7 @@ export class SMSApi {
      * @param smsMessages SmsMessageCollection model
      * @param {*} [options] Override http request options.
      */
-    public smsSendPost (smsMessages: SmsMessageCollection, options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public smsSendPost (smsMessages: SmsMessageCollection, options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/sms/send';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -11923,7 +11922,7 @@ export class SMSApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -11944,7 +11943,7 @@ export class SMSApi {
      * @param templateId Template id
      * @param {*} [options] Override http request options.
      */
-    public smsTemplatesByTemplateIdDelete (templateId: number, options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public smsTemplatesByTemplateIdDelete (templateId: number, options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/sms/templates/{template_id}'
             .replace('{' + 'template_id' + '}', encodeURIComponent(String(templateId)));
         let localVarQueryParameters: any = {};
@@ -11980,7 +11979,7 @@ export class SMSApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -12002,7 +12001,7 @@ export class SMSApi {
      * @param smsTemplate Template item
      * @param {*} [options] Override http request options.
      */
-    public smsTemplatesByTemplateIdPut (templateId: number, smsTemplate: SmsTemplate, options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public smsTemplatesByTemplateIdPut (templateId: number, smsTemplate: SmsTemplate, options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/sms/templates/{template_id}'
             .replace('{' + 'template_id' + '}', encodeURIComponent(String(templateId)));
         let localVarQueryParameters: any = {};
@@ -12044,7 +12043,7 @@ export class SMSApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -12066,7 +12065,7 @@ export class SMSApi {
      * @param limit Number of records per page
      * @param {*} [options] Override http request options.
      */
-    public smsTemplatesGet (page?: number, limit?: number, options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public smsTemplatesGet (page?: number, limit?: number, options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/sms/templates';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -12104,7 +12103,7 @@ export class SMSApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -12125,7 +12124,7 @@ export class SMSApi {
      * @param smsTemplate SmsTemplate model
      * @param {*} [options] Override http request options.
      */
-    public smsTemplatesPost (smsTemplate: SmsTemplate, options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public smsTemplatesPost (smsTemplate: SmsTemplate, options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/sms/templates';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -12161,7 +12160,7 @@ export class SMSApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -12238,7 +12237,7 @@ export class SMSDeliveryReceiptRulesApi {
      * @param receiptRuleId Receipt rule id
      * @param {*} [options] Override http request options.
      */
-    public smsDeliveryReceiptAutomationDelete (receiptRuleId: number, options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public smsDeliveryReceiptAutomationDelete (receiptRuleId: number, options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/automations/sms/receipts/{receipt_rule_id}'
             .replace('{' + 'receipt_rule_id' + '}', encodeURIComponent(String(receiptRuleId)));
         let localVarQueryParameters: any = {};
@@ -12274,7 +12273,7 @@ export class SMSDeliveryReceiptRulesApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -12295,7 +12294,7 @@ export class SMSDeliveryReceiptRulesApi {
      * @param receiptRuleId Receipt rule id
      * @param {*} [options] Override http request options.
      */
-    public smsDeliveryReceiptAutomationGet (receiptRuleId: number, options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public smsDeliveryReceiptAutomationGet (receiptRuleId: number, options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/automations/sms/receipts/{receipt_rule_id}'
             .replace('{' + 'receipt_rule_id' + '}', encodeURIComponent(String(receiptRuleId)));
         let localVarQueryParameters: any = {};
@@ -12331,7 +12330,7 @@ export class SMSDeliveryReceiptRulesApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -12352,7 +12351,7 @@ export class SMSDeliveryReceiptRulesApi {
      * @param deliveryReceiptRule sms delivery receipt rule model
      * @param {*} [options] Override http request options.
      */
-    public smsDeliveryReceiptAutomationPost (deliveryReceiptRule: DeliveryReceiptRule, options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public smsDeliveryReceiptAutomationPost (deliveryReceiptRule: DeliveryReceiptRule, options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/automations/sms/receipts';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -12388,7 +12387,7 @@ export class SMSDeliveryReceiptRulesApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -12410,7 +12409,7 @@ export class SMSDeliveryReceiptRulesApi {
      * @param deliveryReceiptRule Delivery receipt rule model
      * @param {*} [options] Override http request options.
      */
-    public smsDeliveryReceiptAutomationPut (receiptRuleId: number, deliveryReceiptRule: DeliveryReceiptRule, options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public smsDeliveryReceiptAutomationPut (receiptRuleId: number, deliveryReceiptRule: DeliveryReceiptRule, options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/automations/sms/receipts/{receipt_rule_id}'
             .replace('{' + 'receipt_rule_id' + '}', encodeURIComponent(String(receiptRuleId)));
         let localVarQueryParameters: any = {};
@@ -12452,7 +12451,7 @@ export class SMSDeliveryReceiptRulesApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -12475,7 +12474,7 @@ export class SMSDeliveryReceiptRulesApi {
      * @param limit Number of records per page
      * @param {*} [options] Override http request options.
      */
-    public smsDeliveryReceiptAutomationsGet (q?: string, page?: number, limit?: number, options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public smsDeliveryReceiptAutomationsGet (q?: string, page?: number, limit?: number, options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/automations/sms/receipts';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -12517,7 +12516,7 @@ export class SMSDeliveryReceiptRulesApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -12596,7 +12595,7 @@ export class SearchApi {
      * @param limit Number of records per page
      * @param {*} [options] Override http request options.
      */
-    public searchContactsListsGet (q: string, page?: number, limit?: number, options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public searchContactsListsGet (q: string, page?: number, limit?: number, options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/search/contacts-lists';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -12643,7 +12642,7 @@ export class SearchApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -12720,7 +12719,7 @@ export class SmsCampaignApi {
      * @param smsCampaignId ID of SMS campaign to retrieve
      * @param {*} [options] Override http request options.
      */
-    public smsCampaignBySmsCampaignIdGet (smsCampaignId: number, options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public smsCampaignBySmsCampaignIdGet (smsCampaignId: number, options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/sms-campaigns/{sms_campaign_id}'
             .replace('{' + 'sms_campaign_id' + '}', encodeURIComponent(String(smsCampaignId)));
         let localVarQueryParameters: any = {};
@@ -12756,7 +12755,7 @@ export class SmsCampaignApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -12778,7 +12777,7 @@ export class SmsCampaignApi {
      * @param campaign SmsCampaign model
      * @param {*} [options] Override http request options.
      */
-    public smsCampaignsBySmsCampaignIdPut (smsCampaignId: number, campaign: SmsCampaign, options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public smsCampaignsBySmsCampaignIdPut (smsCampaignId: number, campaign: SmsCampaign, options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/sms-campaigns/{sms_campaign_id}'
             .replace('{' + 'sms_campaign_id' + '}', encodeURIComponent(String(smsCampaignId)));
         let localVarQueryParameters: any = {};
@@ -12820,7 +12819,7 @@ export class SmsCampaignApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -12841,7 +12840,7 @@ export class SmsCampaignApi {
      * @param smsCampaignId ID of SMS Campaign to cancel
      * @param {*} [options] Override http request options.
      */
-    public smsCampaignsCancelBySmsCampaignIdPut (smsCampaignId: number, options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public smsCampaignsCancelBySmsCampaignIdPut (smsCampaignId: number, options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/sms-campaigns/{sms_campaign_id}/cancel'
             .replace('{' + 'sms_campaign_id' + '}', encodeURIComponent(String(smsCampaignId)));
         let localVarQueryParameters: any = {};
@@ -12877,7 +12876,7 @@ export class SmsCampaignApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -12899,7 +12898,7 @@ export class SmsCampaignApi {
      * @param limit Number of records per page
      * @param {*} [options] Override http request options.
      */
-    public smsCampaignsGet (page?: number, limit?: number, options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public smsCampaignsGet (page?: number, limit?: number, options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/sms-campaigns';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -12937,7 +12936,7 @@ export class SmsCampaignApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -12958,7 +12957,7 @@ export class SmsCampaignApi {
      * @param campaign SmsCampaign model
      * @param {*} [options] Override http request options.
      */
-    public smsCampaignsPricePost (campaign: SmsCampaign, options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public smsCampaignsPricePost (campaign: SmsCampaign, options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/sms-campaigns/price';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -12994,7 +12993,7 @@ export class SmsCampaignApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -13015,7 +13014,7 @@ export class SmsCampaignApi {
      * @param campaign SmsCampaign model
      * @param {*} [options] Override http request options.
      */
-    public smsCampaignsSendPost (campaign: SmsCampaign, options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public smsCampaignsSendPost (campaign: SmsCampaign, options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/sms-campaigns/send';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -13051,7 +13050,7 @@ export class SmsCampaignApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -13127,7 +13126,7 @@ export class StatisticsApi {
      * @summary Get sms statistics
      * @param {*} [options] Override http request options.
      */
-    public statisticsSmsGet (options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public statisticsSmsGet (options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/statistics/sms';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -13157,7 +13156,7 @@ export class StatisticsApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -13177,7 +13176,7 @@ export class StatisticsApi {
      * @summary Get voice statistics
      * @param {*} [options] Override http request options.
      */
-    public statisticsVoiceGet (options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public statisticsVoiceGet (options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/statistics/voice';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -13207,7 +13206,7 @@ export class StatisticsApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -13284,7 +13283,7 @@ export class SubaccountApi {
      * @param subaccountId ID of subaccount to delete
      * @param {*} [options] Override http request options.
      */
-    public subaccountsBySubaccountIdDelete (subaccountId: number, options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public subaccountsBySubaccountIdDelete (subaccountId: number, options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/subaccounts/{subaccount_id}'
             .replace('{' + 'subaccount_id' + '}', encodeURIComponent(String(subaccountId)));
         let localVarQueryParameters: any = {};
@@ -13320,7 +13319,7 @@ export class SubaccountApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -13341,7 +13340,7 @@ export class SubaccountApi {
      * @param subaccountId ID of subaccount to get
      * @param {*} [options] Override http request options.
      */
-    public subaccountsBySubaccountIdGet (subaccountId: number, options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public subaccountsBySubaccountIdGet (subaccountId: number, options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/subaccounts/{subaccount_id}'
             .replace('{' + 'subaccount_id' + '}', encodeURIComponent(String(subaccountId)));
         let localVarQueryParameters: any = {};
@@ -13377,7 +13376,7 @@ export class SubaccountApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -13399,7 +13398,7 @@ export class SubaccountApi {
      * @param subaccount Subaccount model
      * @param {*} [options] Override http request options.
      */
-    public subaccountsBySubaccountIdPut (subaccountId: number, subaccount: Subaccount, options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public subaccountsBySubaccountIdPut (subaccountId: number, subaccount: Subaccount, options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/subaccounts/{subaccount_id}'
             .replace('{' + 'subaccount_id' + '}', encodeURIComponent(String(subaccountId)));
         let localVarQueryParameters: any = {};
@@ -13441,7 +13440,7 @@ export class SubaccountApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -13463,7 +13462,7 @@ export class SubaccountApi {
      * @param limit Number of records per page
      * @param {*} [options] Override http request options.
      */
-    public subaccountsGet (page?: number, limit?: number, options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public subaccountsGet (page?: number, limit?: number, options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/subaccounts';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -13501,7 +13500,7 @@ export class SubaccountApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -13522,7 +13521,7 @@ export class SubaccountApi {
      * @param subaccount Subaccount model
      * @param {*} [options] Override http request options.
      */
-    public subaccountsPost (subaccount: Subaccount, options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public subaccountsPost (subaccount: Subaccount, options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/subaccounts';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -13558,7 +13557,7 @@ export class SubaccountApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -13579,7 +13578,7 @@ export class SubaccountApi {
      * @param subaccountId ID of subaccount to regenerate API key for
      * @param {*} [options] Override http request options.
      */
-    public subaccountsRegenApiKeyBySubaccountIdPut (subaccountId: number, options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public subaccountsRegenApiKeyBySubaccountIdPut (subaccountId: number, options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/subaccounts/{subaccount_id}/regen-api-key'
             .replace('{' + 'subaccount_id' + '}', encodeURIComponent(String(subaccountId)));
         let localVarQueryParameters: any = {};
@@ -13615,7 +13614,7 @@ export class SubaccountApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -13693,7 +13692,7 @@ export class TimezonesApi {
      * @param limit Number of records per page
      * @param {*} [options] Override http request options.
      */
-    public timezonesGet (page?: number, limit?: number, options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public timezonesGet (page?: number, limit?: number, options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/timezones';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -13731,7 +13730,7 @@ export class TimezonesApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -13810,7 +13809,7 @@ export class TransactionalEmailApi {
      * @param dateTo End date
      * @param {*} [options] Override http request options.
      */
-    public emailHistoryExportGet (filename: string, dateFrom?: number, dateTo?: number, options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public emailHistoryExportGet (filename: string, dateFrom?: number, dateTo?: number, options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/email/history/export';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -13857,7 +13856,7 @@ export class TransactionalEmailApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -13881,7 +13880,7 @@ export class TransactionalEmailApi {
      * @param limit Number of records per page
      * @param {*} [options] Override http request options.
      */
-    public emailHistoryGet (dateFrom?: number, dateTo?: number, page?: number, limit?: number, options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public emailHistoryGet (dateFrom?: number, dateTo?: number, page?: number, limit?: number, options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/email/history';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -13927,7 +13926,7 @@ export class TransactionalEmailApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -13948,7 +13947,7 @@ export class TransactionalEmailApi {
      * @param email Email model
      * @param {*} [options] Override http request options.
      */
-    public emailPricePost (email: Email, options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public emailPricePost (email: Email, options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/email/price';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -13984,7 +13983,7 @@ export class TransactionalEmailApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -14005,7 +14004,7 @@ export class TransactionalEmailApi {
      * @param email Email model
      * @param {*} [options] Override http request options.
      */
-    public emailSendPost (email: Email, options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public emailSendPost (email: Email, options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/email/send';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -14041,7 +14040,7 @@ export class TransactionalEmailApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -14118,7 +14117,7 @@ export class TransferCreditApi {
      * @param resellerAccountTransferCredit ResellerAccountTransferCredit model
      * @param {*} [options] Override http request options.
      */
-    public resellerTransferCreditPut (resellerAccountTransferCredit: ResellerAccountTransferCredit, options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public resellerTransferCreditPut (resellerAccountTransferCredit: ResellerAccountTransferCredit, options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/reseller/transfer-credit';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -14154,7 +14153,7 @@ export class TransferCreditApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -14232,7 +14231,7 @@ export class UploadApi {
      * @param convert 
      * @param {*} [options] Override http request options.
      */
-    public uploadsPost (uploadFile: UploadFile, convert: string, options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public uploadsPost (uploadFile: UploadFile, convert: string, options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/uploads';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -14277,7 +14276,7 @@ export class UploadApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -14354,7 +14353,7 @@ export class UserEmailTemplatesApi {
      * @param templateId Email template id
      * @param {*} [options] Override http request options.
      */
-    public emailTemplateDelete (templateId: number, options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public emailTemplateDelete (templateId: number, options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/email/templates/{template_id}'
             .replace('{' + 'template_id' + '}', encodeURIComponent(String(templateId)));
         let localVarQueryParameters: any = {};
@@ -14390,7 +14389,7 @@ export class UserEmailTemplatesApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -14411,7 +14410,7 @@ export class UserEmailTemplatesApi {
      * @param templateId Email template id
      * @param {*} [options] Override http request options.
      */
-    public emailTemplateGet (templateId: number, options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public emailTemplateGet (templateId: number, options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/email/templates/{template_id}'
             .replace('{' + 'template_id' + '}', encodeURIComponent(String(templateId)));
         let localVarQueryParameters: any = {};
@@ -14447,7 +14446,7 @@ export class UserEmailTemplatesApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -14468,7 +14467,7 @@ export class UserEmailTemplatesApi {
      * @param emailTemplate Email template model
      * @param {*} [options] Override http request options.
      */
-    public emailTemplatePost (emailTemplate: EmailTemplateNew, options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public emailTemplatePost (emailTemplate: EmailTemplateNew, options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/email/templates';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -14504,7 +14503,7 @@ export class UserEmailTemplatesApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -14526,7 +14525,7 @@ export class UserEmailTemplatesApi {
      * @param emailTemplate Email template model
      * @param {*} [options] Override http request options.
      */
-    public emailTemplatePut (templateId: number, emailTemplate: EmailTemplateUpdate, options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public emailTemplatePut (templateId: number, emailTemplate: EmailTemplateUpdate, options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/email/templates/{template_id}'
             .replace('{' + 'template_id' + '}', encodeURIComponent(String(templateId)));
         let localVarQueryParameters: any = {};
@@ -14568,7 +14567,7 @@ export class UserEmailTemplatesApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -14590,7 +14589,7 @@ export class UserEmailTemplatesApi {
      * @param limit Number of records per page
      * @param {*} [options] Override http request options.
      */
-    public emailTemplatesGet (page?: number, limit?: number, options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public emailTemplatesGet (page?: number, limit?: number, options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/email/templates';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -14628,7 +14627,7 @@ export class UserEmailTemplatesApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -14704,7 +14703,7 @@ export class VoiceApi {
      * @summary Update all voice messages as cancelled
      * @param {*} [options] Override http request options.
      */
-    public voiceCancelAllPut (options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public voiceCancelAllPut (options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/voice/cancel-all';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -14734,7 +14733,7 @@ export class VoiceApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -14755,7 +14754,7 @@ export class VoiceApi {
      * @param messageId Your voice message id
      * @param {*} [options] Override http request options.
      */
-    public voiceCancelByMessageIdPut (messageId: string, options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public voiceCancelByMessageIdPut (messageId: string, options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/voice/{message_id}/cancel'
             .replace('{' + 'message_id' + '}', encodeURIComponent(String(messageId)));
         let localVarQueryParameters: any = {};
@@ -14791,7 +14790,7 @@ export class VoiceApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -14812,7 +14811,7 @@ export class VoiceApi {
      * @param filename Filename to export to
      * @param {*} [options] Override http request options.
      */
-    public voiceHistoryExportGet (filename: string, options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public voiceHistoryExportGet (filename: string, options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/voice/history/export';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -14851,7 +14850,7 @@ export class VoiceApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -14875,7 +14874,7 @@ export class VoiceApi {
      * @param limit Number of records per page
      * @param {*} [options] Override http request options.
      */
-    public voiceHistoryGet (dateFrom?: number, dateTo?: number, page?: number, limit?: number, options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public voiceHistoryGet (dateFrom?: number, dateTo?: number, page?: number, limit?: number, options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/voice/history';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -14921,7 +14920,7 @@ export class VoiceApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -14941,7 +14940,7 @@ export class VoiceApi {
      * @summary Get all voice languages
      * @param {*} [options] Override http request options.
      */
-    public voiceLangGet (options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public voiceLangGet (options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/voice/lang';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -14971,7 +14970,7 @@ export class VoiceApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -14992,7 +14991,7 @@ export class VoiceApi {
      * @param voiceMessages VoiceMessageCollection model
      * @param {*} [options] Override http request options.
      */
-    public voicePricePost (voiceMessages: VoiceMessageCollection, options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public voicePricePost (voiceMessages: VoiceMessageCollection, options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/voice/price';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -15028,7 +15027,7 @@ export class VoiceApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -15050,7 +15049,7 @@ export class VoiceApi {
      * @param limit Number of records per page
      * @param {*} [options] Override http request options.
      */
-    public voiceReceiptsGet (page?: number, limit?: number, options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public voiceReceiptsGet (page?: number, limit?: number, options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/voice/receipts';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -15088,7 +15087,7 @@ export class VoiceApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -15109,7 +15108,7 @@ export class VoiceApi {
      * @param url Url model
      * @param {*} [options] Override http request options.
      */
-    public voiceReceiptsPost (url: Url, options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public voiceReceiptsPost (url: Url, options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/voice/receipts';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -15145,7 +15144,7 @@ export class VoiceApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -15166,7 +15165,7 @@ export class VoiceApi {
      * @param dateBefore DateBefore model
      * @param {*} [options] Override http request options.
      */
-    public voiceReceiptsReadPut (dateBefore?: DateBefore, options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public voiceReceiptsReadPut (dateBefore?: DateBefore, options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/voice/receipts-read';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -15197,7 +15196,7 @@ export class VoiceApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -15218,7 +15217,7 @@ export class VoiceApi {
      * @param voiceMessages VoiceMessageCollection model
      * @param {*} [options] Override http request options.
      */
-    public voiceSendPost (voiceMessages: VoiceMessageCollection, options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public voiceSendPost (voiceMessages: VoiceMessageCollection, options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/voice/send';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -15254,7 +15253,7 @@ export class VoiceApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -15331,7 +15330,7 @@ export class VoiceDeliveryReceiptRulesApi {
      * @param receiptRuleId Receipt rule id
      * @param {*} [options] Override http request options.
      */
-    public voiceDeliveryReceiptAutomationDelete (receiptRuleId: number, options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public voiceDeliveryReceiptAutomationDelete (receiptRuleId: number, options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/automations/voice/receipts/{receipt_rule_id}'
             .replace('{' + 'receipt_rule_id' + '}', encodeURIComponent(String(receiptRuleId)));
         let localVarQueryParameters: any = {};
@@ -15367,7 +15366,7 @@ export class VoiceDeliveryReceiptRulesApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -15388,7 +15387,7 @@ export class VoiceDeliveryReceiptRulesApi {
      * @param receiptRuleId Receipt rule id
      * @param {*} [options] Override http request options.
      */
-    public voiceDeliveryReceiptAutomationGet (receiptRuleId: number, options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public voiceDeliveryReceiptAutomationGet (receiptRuleId: number, options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/automations/voice/receipts/{receipt_rule_id}'
             .replace('{' + 'receipt_rule_id' + '}', encodeURIComponent(String(receiptRuleId)));
         let localVarQueryParameters: any = {};
@@ -15424,7 +15423,7 @@ export class VoiceDeliveryReceiptRulesApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -15445,7 +15444,7 @@ export class VoiceDeliveryReceiptRulesApi {
      * @param deliveryReceiptRule voice delivery receipt rule model
      * @param {*} [options] Override http request options.
      */
-    public voiceDeliveryReceiptAutomationPost (deliveryReceiptRule: DeliveryReceiptRule, options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public voiceDeliveryReceiptAutomationPost (deliveryReceiptRule: DeliveryReceiptRule, options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/automations/voice/receipts';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -15481,7 +15480,7 @@ export class VoiceDeliveryReceiptRulesApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -15503,7 +15502,7 @@ export class VoiceDeliveryReceiptRulesApi {
      * @param deliveryReceiptRule Delivery receipt rule model
      * @param {*} [options] Override http request options.
      */
-    public voiceDeliveryReceiptAutomationPut (receiptRuleId: number, deliveryReceiptRule: DeliveryReceiptRule, options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public voiceDeliveryReceiptAutomationPut (receiptRuleId: number, deliveryReceiptRule: DeliveryReceiptRule, options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/automations/voice/receipts/{receipt_rule_id}'
             .replace('{' + 'receipt_rule_id' + '}', encodeURIComponent(String(receiptRuleId)));
         let localVarQueryParameters: any = {};
@@ -15545,7 +15544,7 @@ export class VoiceDeliveryReceiptRulesApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -15568,7 +15567,7 @@ export class VoiceDeliveryReceiptRulesApi {
      * @param limit Number of records per page
      * @param {*} [options] Override http request options.
      */
-    public voiceDeliveryReceiptAutomationsGet (q?: string, page?: number, limit?: number, options: any = {}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
+    public voiceDeliveryReceiptAutomationsGet (q?: string, page?: number, limit?: number, options: any = {}) : Promise<{ response: http.ClientResponse; body: string;  }> {
         const localVarPath = this.basePath + '/automations/voice/receipts';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -15610,7 +15609,7 @@ export class VoiceDeliveryReceiptRulesApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.IncomingMessage; body: string;  }>((resolve, reject) => {
+        return new Promise<{ response: http.ClientResponse; body: string;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
