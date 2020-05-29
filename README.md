@@ -1,6 +1,11 @@
-# The official nodejs library for ClickSend v3 REST API
+# A fork of the official nodejs library for ClickSend v3 REST API
 
-This is the official [ClickSend](https://clicksend.com) SDK. Documentation can be found [here](https://developers.clicksend.com/docs/rest/v3/?nodejs#introduction).
+This is a fork of the official [ClickSend](https://clicksend.com) SDK. Documentation can be found [here](https://developers.clicksend.com/docs/rest/v3/?nodejs#introduction).
+
+Differences from the offical version:
+* Removes [bluebird](https://github.com/petkaantonov/bluebird) dependency as it isn't necessary for compiling.
+* Distributes a compiled version of the package so compilation after installation is no longer necessary.
+* Installs dependencies when installing (see [Issue #1](https://github.com/ClickSend/clicksend-nodejs/issues/1)).
 
 ## Requirements
   
