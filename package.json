@@ -21,9 +21,6 @@
     "url": "https://github.com/ClickSend/clicksend-nodejs/issues"
   },
   "homepage": "https://github.com/ClickSend/clicksend-nodejs#readme",
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
-  },
   "dependencies": {
     "@types/request": "^2.48.5",
     "http": "0.0.1-security",
